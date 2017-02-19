@@ -7,27 +7,19 @@ namespace _06_RhombusOfStars
         static void Main(string[] args)
         {
             int n = int.Parse(Console.ReadLine());
+            int length = n + n - 1;
+            int counter = 1;
 
-            for (int i = 1; i <= n; i++)
+            for (int i = 0; i < length; i++)
             {
-                Console.Write(new string(' ', n - i));
-
-                for (int j = 0; j < i; j++)
-                {
-                    Console.Write("* ");
-                }
+                Console.Write(new string(' ', n - counter));
+                Console.Write('*');
+                for (int j = 1; j < counter; j++)
+                    Console.Write(" *");
                 Console.WriteLine();
-            }
 
-            for (int i = n - 1; i > 0; i--)
-            {
-                Console.Write(new string(' ', n - i));
-
-                for (int j = 0; j < i; j++)
-                {
-                    Console.Write("* ");
-                }
-                Console.WriteLine();
+                if (i < length / 2) counter++;
+                else counter--;
             }
         }
     }

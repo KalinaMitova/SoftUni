@@ -1,37 +1,27 @@
 ﻿using System;
 
-namespace _05_SquareFrame
+namespace ConsoleApplication2
 {
     class Program
     {
         static void Main(string[] args)
         {
             int n = int.Parse(Console.ReadLine());
-            int length = n - 2;
+            char symbol = '+';
 
-            Console.Write('+');
-            for (int i = 0; i < length; i++)
+            for (int row = 0; row < n; row++)
             {
-                Console.Write(" -");
-            }
-            Console.WriteLine(" +");
+                if (row == 0 || row == n - 1) symbol = '+';
+                else symbol = '|';
 
-            for (int i = 0; i < length; i++)
-            {
-                Console.Write('|');
-                for (int j = 0; j < length; j++)
+                Console.Write(symbol);
+                for (int col = 0; col < n - 2; col++)
                 {
                     Console.Write(" -");
                 }
-                Console.WriteLine(" |");
+                Console.Write(' ');
+                Console.WriteLine(symbol);
             }
-            
-            Console.Write('+');
-            for (int i = 0; i < length; i++)
-            {
-                Console.Write(" -");
-            }
-            Console.WriteLine(" +");
         }
     }
 }
