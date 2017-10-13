@@ -175,3 +175,18 @@ WHERE a.Id = @AccountId
 USE Diablo
 GO
 --13. *Cash in User Games Odd Rows
+CREATE FUNCTION dbo.ufn_CashInUsersGames (@GameName NVARCHAR(30))
+RETURNS TABLE
+AS
+RETURN
+(
+	SELECT SUM(Cash) AS [SumCash]
+      FROM 
+		   (
+		   SELECT *,
+		   		  ROW_NUMBER() OVER(ORDER BY ug.Cash DESC) AS [Row]
+		   	 FROM UsersGames AS ug
+		   	WHERE ug.GameId IN ((SELECT g.Id FROM Games AS g WHERE [Name] = @GameName))
+		   ) AS TempTable
+	 WHERE [Row] % 2 = 1
+)
