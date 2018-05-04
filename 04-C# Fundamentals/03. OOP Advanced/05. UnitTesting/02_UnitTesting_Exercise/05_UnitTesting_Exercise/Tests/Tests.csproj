@@ -1,0 +1,23 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="microsoft.net.test.sdk" Version="15.6.2" />
+    <PackageReference Include="moq" Version="4.8.2" />
+    <PackageReference Include="nunit" Version="3.10.1" />
+    <PackageReference Include="nunit3testadapter" Version="3.10.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\01_Database\01_Database.csproj" />
+    <ProjectReference Include="..\02_PersonDatabase\02_PersonDatabase.csproj" />
+    <ProjectReference Include="..\03_ListyIterator\03_ListyIterator.csproj" />
+    <ProjectReference Include="..\04_Bubble\04_BubbleSort.csproj" />
+    <ProjectReference Include="..\08_CustomLinkedList\08_CustomLinkedList.csproj" />
+    <ProjectReference Include="..\10_TirePressureMonitoringSystem\10_TirePressureMonitoringSystem.csproj" />
+  </ItemGroup>
+
+</Project>

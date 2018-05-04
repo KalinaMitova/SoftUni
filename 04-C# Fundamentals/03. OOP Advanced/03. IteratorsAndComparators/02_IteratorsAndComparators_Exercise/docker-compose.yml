@@ -1,0 +1,8 @@
+version: '3'
+
+services:
+  08_petclinic:
+    image: 08petclinic
+    build:
+      context: .\08_PetClinic
+      dockerfile: Dockerfile
