@@ -1,54 +1,31 @@
-const url = require('url');
 const fs = require('fs');
-const qs = require('querystring');
 const Category = require('../models/Category');
 
-const handler = function (req, res) {
-    req.pathname = req.pathname || url.parse(req.url).pathname;
+module.exports.addGet = (req, res) => {
+    res.render('categories/add');
+};
 
-    if (req.pathname === '/category/add' && req.method === 'GET') {
-        fs.readFile('./views/categories/add.html', (err, html) => {
+module.exports.addPost = async (req, res) => {
+    let category = req.body;
+    await Category.create(category);
+    res.redirect('/');
+};
 
-            if (err) {
-                console.log(err);
+module.exports.productsByCategory = (req, res) => {
+    let categoryName = req.params.category;
 
-                res.writeHead(404, {
-                    'Content-Type': "text/plain"
-                });
-
-                res.write('404 not found!');
-                res.end();
+    Category.findOne({
+            name: categoryName
+        })
+        .populate('products')
+        .then((category) => {
+            if (!category) {
+                res.sendStatus(404);
                 return;
             }
 
-            res.writeHead(200, {
-                'Content-Type': 'text/html'
+            res.render('categories/products', {
+                category
             });
-
-            res.write(html);
-            res.end();
         });
-    } else if (req.pathname === '/category/add' && req.method === 'POST') {
-        let queryData = '';
-
-        req.on('data', (data) => {
-            queryData += data;
-        });
-
-        req.on('end', () => {
-            let category = qs.parse(queryData);
-
-            Category.create(category)
-                .then(() => {
-                    res.writeHead(302, {
-                        'Location': '/'
-                    });
-                    res.end();
-                });
-        });
-    } else {
-        return true;
-    }
 };
-
-module.exports = handler;

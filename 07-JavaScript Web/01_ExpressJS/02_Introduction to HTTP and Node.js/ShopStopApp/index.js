@@ -1,21 +1,16 @@
-const http = require('http');
-const handlers = require('./handlers');
 const port = 3000;
-
-let environment = process.env.NODE_ENV || 'development';
 const config = require('./config/config');
 const database = require('./config/database.config');
+const express = require('express');
 
-database(config[environment]);
+let app = express();
+let environment = process.env.NODE_ENV || 'development';
+let configuration = config[environment];
 
-http
-    .createServer((req, res) => {
-        for (const handler of handlers) {
-            if (!handler(req, res)) {
-                break;
-            }
-        }
-    })
-    .listen(port);
+database(configuration);
+require('./config/express')(app, configuration);
+require('./config/routes')(app);
 
-console.log('Server is listening on port ' + port);
+app.listen(port, () => {
+    console.log('Server is listening on port ' + port);
+});
