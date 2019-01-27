@@ -1,0 +1,29 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function extract(id) {
+            let text = document.getElementById(id).textContent;
+            let pattern = /\(([^\)]+)\)/g;
+            
+            let output = [];
+            let m;
+
+            do {
+                m = pattern.exec(text);
+
+                if(m) {
+                    output.push(m[1]);
+                }
+            } while(m);
+
+            return output.join(", ");
+        }    
+    </script>
+</body>
+</html>

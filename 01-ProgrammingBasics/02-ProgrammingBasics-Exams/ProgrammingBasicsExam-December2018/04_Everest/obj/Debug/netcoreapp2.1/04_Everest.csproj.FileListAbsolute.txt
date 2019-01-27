@@ -1,0 +1,11 @@
+G:\GitHub\SoftUni\01-ProgrammingBasics\02-ProgrammingBasics-Exams\ProgrammingBasicsExam-December2018\04_Everest\bin\Debug\netcoreapp2.1\04_Everest.deps.json
+G:\GitHub\SoftUni\01-ProgrammingBasics\02-ProgrammingBasics-Exams\ProgrammingBasicsExam-December2018\04_Everest\bin\Debug\netcoreapp2.1\04_Everest.runtimeconfig.json
+G:\GitHub\SoftUni\01-ProgrammingBasics\02-ProgrammingBasics-Exams\ProgrammingBasicsExam-December2018\04_Everest\bin\Debug\netcoreapp2.1\04_Everest.runtimeconfig.dev.json
+G:\GitHub\SoftUni\01-ProgrammingBasics\02-ProgrammingBasics-Exams\ProgrammingBasicsExam-December2018\04_Everest\bin\Debug\netcoreapp2.1\04_Everest.dll
+G:\GitHub\SoftUni\01-ProgrammingBasics\02-ProgrammingBasics-Exams\ProgrammingBasicsExam-December2018\04_Everest\bin\Debug\netcoreapp2.1\04_Everest.pdb
+G:\GitHub\SoftUni\01-ProgrammingBasics\02-ProgrammingBasics-Exams\ProgrammingBasicsExam-December2018\04_Everest\obj\Debug\netcoreapp2.1\04_Everest.csprojAssemblyReference.cache
+G:\GitHub\SoftUni\01-ProgrammingBasics\02-ProgrammingBasics-Exams\ProgrammingBasicsExam-December2018\04_Everest\obj\Debug\netcoreapp2.1\04_Everest.csproj.CoreCompileInputs.cache
+G:\GitHub\SoftUni\01-ProgrammingBasics\02-ProgrammingBasics-Exams\ProgrammingBasicsExam-December2018\04_Everest\obj\Debug\netcoreapp2.1\04_Everest.AssemblyInfoInputs.cache
+G:\GitHub\SoftUni\01-ProgrammingBasics\02-ProgrammingBasics-Exams\ProgrammingBasicsExam-December2018\04_Everest\obj\Debug\netcoreapp2.1\04_Everest.AssemblyInfo.cs
+G:\GitHub\SoftUni\01-ProgrammingBasics\02-ProgrammingBasics-Exams\ProgrammingBasicsExam-December2018\04_Everest\obj\Debug\netcoreapp2.1\04_Everest.dll
+G:\GitHub\SoftUni\01-ProgrammingBasics\02-ProgrammingBasics-Exams\ProgrammingBasicsExam-December2018\04_Everest\obj\Debug\netcoreapp2.1\04_Everest.pdb

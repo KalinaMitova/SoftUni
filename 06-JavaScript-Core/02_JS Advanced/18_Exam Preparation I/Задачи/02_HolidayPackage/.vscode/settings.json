@@ -1,0 +1,12 @@
+{   
+    "mocha.options": {
+        "compilers": {
+            "js": "./custom-babel-register.js"
+        }
+    },
+    "mocha.requires": [
+        "babel-polyfill",
+        "babel-register"
+    ],
+    "mocha.files.glob": "./*.js"
+}

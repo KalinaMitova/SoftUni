@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Monthly Calendar</title>
+    <style>
+        .prev-month { color: red }
+        .next-month { color: blue }
+        .today { font-weight: bold; background: #DDD; }
+        .title { background: #AAAAFF; margin: 10px 0; padding:5px }
+        table { border: 1px solid #CCC;}
+        td { text-align: center; }
+        #calendarCode { width: 100%; }
+    </style>
+    <script>
+        function calendar(input)
+        {
+            let day = +input[0];
+            let month = +input[1] - 1;
+            let year = +input[2];
+
+            let date = new Date(year, month, 1);
+            
+            let dayOfWeek = date.getDay();    
+            date.setDate(date.getDate() - dayOfWeek);
+
+            let calendar = 
+                "<table>\n\t<tr><th>Sun</th><th>Mon</th><th>Tue</th><th>Wed</th><th>Thu</th><th>Fri</th><th>Sat</th></tr>\n";
+            
+            do {
+                let line = '\t<tr>';
+
+                for (let col = 0; col < 7; col++) {
+                    let currentDate = date.getDate();
+                    let currentMonth = date.getMonth();
+
+                    if (currentDate === day && currentMonth === month) {
+                        line += `<td class="today">${currentDate}</td>`;
+                    } else if ((currentMonth > month && !(month === 0 && currentMonth === 11)) || (currentMonth === 0 && month === 11)) {
+                        line += `<td class="next-month">${currentDate}</td>`;
+                    } else if(currentMonth < month || (month === 0 && currentMonth === 11)) {
+                        line += `<td class="prev-month">${currentDate}</td>`;
+                    } else {
+                        line += `<td>${currentDate}</td>`;
+                    }
+
+                    date.setDate(currentDate + 1);
+                }
+
+                line += '</tr>';
+
+                calendar += line + "\n";
+            } while(date.getMonth() === month)
+                    
+            calendar += "</table>";
+
+            return calendar;
+        }
+    </script>
+</head>
+
+<body>
+    Day: <input id="day" type="number" value="4" />
+    Month: <input id="month" type="number" value="9" />
+    Year: <input id="year" type="number" value="2016" />
+    <input type="button" value="Show"
+        onclick="let calendarHTML =
+            calendar([document.getElementById('day').value,
+                document.getElementById('month').value,
+                document.getElementById('year').value]);
+            document.getElementById('calendar').innerHTML = calendarHTML;
+            document.getElementById('calendarCode').innerText = calendarHTML" />
+    <div class="title">Calendar:</div>
+    <div id="calendar">Calendar will be shown here</div>
+    <div class="title">HTML:</div>
+    <textarea rows="12" id="calendarCode"></textarea>
+</body>
+
+</html>

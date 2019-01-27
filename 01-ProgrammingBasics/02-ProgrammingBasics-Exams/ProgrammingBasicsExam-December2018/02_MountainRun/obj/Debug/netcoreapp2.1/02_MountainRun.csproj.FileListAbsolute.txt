@@ -1,0 +1,10 @@
+G:\GitHub\SoftUni\01-ProgrammingBasics\02-ProgrammingBasics-Exams\ProgrammingBasicsExam-December2018\02_MountainRun\bin\Debug\netcoreapp2.1\02_MountainRun.deps.json
+G:\GitHub\SoftUni\01-ProgrammingBasics\02-ProgrammingBasics-Exams\ProgrammingBasicsExam-December2018\02_MountainRun\bin\Debug\netcoreapp2.1\02_MountainRun.runtimeconfig.json
+G:\GitHub\SoftUni\01-ProgrammingBasics\02-ProgrammingBasics-Exams\ProgrammingBasicsExam-December2018\02_MountainRun\bin\Debug\netcoreapp2.1\02_MountainRun.runtimeconfig.dev.json
+G:\GitHub\SoftUni\01-ProgrammingBasics\02-ProgrammingBasics-Exams\ProgrammingBasicsExam-December2018\02_MountainRun\bin\Debug\netcoreapp2.1\02_MountainRun.dll
+G:\GitHub\SoftUni\01-ProgrammingBasics\02-ProgrammingBasics-Exams\ProgrammingBasicsExam-December2018\02_MountainRun\bin\Debug\netcoreapp2.1\02_MountainRun.pdb
+G:\GitHub\SoftUni\01-ProgrammingBasics\02-ProgrammingBasics-Exams\ProgrammingBasicsExam-December2018\02_MountainRun\obj\Debug\netcoreapp2.1\02_MountainRun.csproj.CoreCompileInputs.cache
+G:\GitHub\SoftUni\01-ProgrammingBasics\02-ProgrammingBasics-Exams\ProgrammingBasicsExam-December2018\02_MountainRun\obj\Debug\netcoreapp2.1\02_MountainRun.AssemblyInfoInputs.cache
+G:\GitHub\SoftUni\01-ProgrammingBasics\02-ProgrammingBasics-Exams\ProgrammingBasicsExam-December2018\02_MountainRun\obj\Debug\netcoreapp2.1\02_MountainRun.AssemblyInfo.cs
+G:\GitHub\SoftUni\01-ProgrammingBasics\02-ProgrammingBasics-Exams\ProgrammingBasicsExam-December2018\02_MountainRun\obj\Debug\netcoreapp2.1\02_MountainRun.dll
+G:\GitHub\SoftUni\01-ProgrammingBasics\02-ProgrammingBasics-Exams\ProgrammingBasicsExam-December2018\02_MountainRun\obj\Debug\netcoreapp2.1\02_MountainRun.pdb

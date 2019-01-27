@@ -1,0 +1,10 @@
+G:\GitHub\SoftUni\01-ProgrammingBasics\02-ProgrammingBasics-Exams\ProgrammingBasicsExam-December2018\02_SchoolTrip\bin\Debug\netcoreapp2.1\02_SchoolTrip.deps.json
+G:\GitHub\SoftUni\01-ProgrammingBasics\02-ProgrammingBasics-Exams\ProgrammingBasicsExam-December2018\02_SchoolTrip\bin\Debug\netcoreapp2.1\02_SchoolTrip.runtimeconfig.json
+G:\GitHub\SoftUni\01-ProgrammingBasics\02-ProgrammingBasics-Exams\ProgrammingBasicsExam-December2018\02_SchoolTrip\bin\Debug\netcoreapp2.1\02_SchoolTrip.runtimeconfig.dev.json
+G:\GitHub\SoftUni\01-ProgrammingBasics\02-ProgrammingBasics-Exams\ProgrammingBasicsExam-December2018\02_SchoolTrip\bin\Debug\netcoreapp2.1\02_SchoolTrip.dll
+G:\GitHub\SoftUni\01-ProgrammingBasics\02-ProgrammingBasics-Exams\ProgrammingBasicsExam-December2018\02_SchoolTrip\bin\Debug\netcoreapp2.1\02_SchoolTrip.pdb
+G:\GitHub\SoftUni\01-ProgrammingBasics\02-ProgrammingBasics-Exams\ProgrammingBasicsExam-December2018\02_SchoolTrip\obj\Debug\netcoreapp2.1\02_SchoolTrip.csproj.CoreCompileInputs.cache
+G:\GitHub\SoftUni\01-ProgrammingBasics\02-ProgrammingBasics-Exams\ProgrammingBasicsExam-December2018\02_SchoolTrip\obj\Debug\netcoreapp2.1\02_SchoolTrip.AssemblyInfoInputs.cache
+G:\GitHub\SoftUni\01-ProgrammingBasics\02-ProgrammingBasics-Exams\ProgrammingBasicsExam-December2018\02_SchoolTrip\obj\Debug\netcoreapp2.1\02_SchoolTrip.AssemblyInfo.cs
+G:\GitHub\SoftUni\01-ProgrammingBasics\02-ProgrammingBasics-Exams\ProgrammingBasicsExam-December2018\02_SchoolTrip\obj\Debug\netcoreapp2.1\02_SchoolTrip.dll
+G:\GitHub\SoftUni\01-ProgrammingBasics\02-ProgrammingBasics-Exams\ProgrammingBasicsExam-December2018\02_SchoolTrip\obj\Debug\netcoreapp2.1\02_SchoolTrip.pdb

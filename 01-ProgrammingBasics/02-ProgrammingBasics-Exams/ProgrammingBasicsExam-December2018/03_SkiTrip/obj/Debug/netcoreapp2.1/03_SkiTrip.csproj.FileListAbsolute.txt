@@ -1,0 +1,11 @@
+G:\GitHub\SoftUni\01-ProgrammingBasics\02-ProgrammingBasics-Exams\ProgrammingBasicsExam-December2018\03_SkiTrip\bin\Debug\netcoreapp2.1\03_SkiTrip.deps.json
+G:\GitHub\SoftUni\01-ProgrammingBasics\02-ProgrammingBasics-Exams\ProgrammingBasicsExam-December2018\03_SkiTrip\bin\Debug\netcoreapp2.1\03_SkiTrip.runtimeconfig.json
+G:\GitHub\SoftUni\01-ProgrammingBasics\02-ProgrammingBasics-Exams\ProgrammingBasicsExam-December2018\03_SkiTrip\bin\Debug\netcoreapp2.1\03_SkiTrip.runtimeconfig.dev.json
+G:\GitHub\SoftUni\01-ProgrammingBasics\02-ProgrammingBasics-Exams\ProgrammingBasicsExam-December2018\03_SkiTrip\bin\Debug\netcoreapp2.1\03_SkiTrip.dll
+G:\GitHub\SoftUni\01-ProgrammingBasics\02-ProgrammingBasics-Exams\ProgrammingBasicsExam-December2018\03_SkiTrip\bin\Debug\netcoreapp2.1\03_SkiTrip.pdb
+G:\GitHub\SoftUni\01-ProgrammingBasics\02-ProgrammingBasics-Exams\ProgrammingBasicsExam-December2018\03_SkiTrip\obj\Debug\netcoreapp2.1\03_SkiTrip.csprojAssemblyReference.cache
+G:\GitHub\SoftUni\01-ProgrammingBasics\02-ProgrammingBasics-Exams\ProgrammingBasicsExam-December2018\03_SkiTrip\obj\Debug\netcoreapp2.1\03_SkiTrip.csproj.CoreCompileInputs.cache
+G:\GitHub\SoftUni\01-ProgrammingBasics\02-ProgrammingBasics-Exams\ProgrammingBasicsExam-December2018\03_SkiTrip\obj\Debug\netcoreapp2.1\03_SkiTrip.AssemblyInfoInputs.cache
+G:\GitHub\SoftUni\01-ProgrammingBasics\02-ProgrammingBasics-Exams\ProgrammingBasicsExam-December2018\03_SkiTrip\obj\Debug\netcoreapp2.1\03_SkiTrip.AssemblyInfo.cs
+G:\GitHub\SoftUni\01-ProgrammingBasics\02-ProgrammingBasics-Exams\ProgrammingBasicsExam-December2018\03_SkiTrip\obj\Debug\netcoreapp2.1\03_SkiTrip.dll
+G:\GitHub\SoftUni\01-ProgrammingBasics\02-ProgrammingBasics-Exams\ProgrammingBasicsExam-December2018\03_SkiTrip\obj\Debug\netcoreapp2.1\03_SkiTrip.pdb

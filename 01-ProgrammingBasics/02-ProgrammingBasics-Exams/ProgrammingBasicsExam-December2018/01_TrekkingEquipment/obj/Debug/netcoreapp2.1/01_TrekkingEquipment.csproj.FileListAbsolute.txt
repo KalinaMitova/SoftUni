@@ -1,0 +1,10 @@
+G:\GitHub\SoftUni\01-ProgrammingBasics\02-ProgrammingBasics-Exams\ProgrammingBasicsExam-December2018\01_TrekkingEquipment\bin\Debug\netcoreapp2.1\01_TrekkingEquipment.deps.json
+G:\GitHub\SoftUni\01-ProgrammingBasics\02-ProgrammingBasics-Exams\ProgrammingBasicsExam-December2018\01_TrekkingEquipment\bin\Debug\netcoreapp2.1\01_TrekkingEquipment.runtimeconfig.json
+G:\GitHub\SoftUni\01-ProgrammingBasics\02-ProgrammingBasics-Exams\ProgrammingBasicsExam-December2018\01_TrekkingEquipment\bin\Debug\netcoreapp2.1\01_TrekkingEquipment.runtimeconfig.dev.json
+G:\GitHub\SoftUni\01-ProgrammingBasics\02-ProgrammingBasics-Exams\ProgrammingBasicsExam-December2018\01_TrekkingEquipment\bin\Debug\netcoreapp2.1\01_TrekkingEquipment.dll
+G:\GitHub\SoftUni\01-ProgrammingBasics\02-ProgrammingBasics-Exams\ProgrammingBasicsExam-December2018\01_TrekkingEquipment\bin\Debug\netcoreapp2.1\01_TrekkingEquipment.pdb
+G:\GitHub\SoftUni\01-ProgrammingBasics\02-ProgrammingBasics-Exams\ProgrammingBasicsExam-December2018\01_TrekkingEquipment\obj\Debug\netcoreapp2.1\01_TrekkingEquipment.csproj.CoreCompileInputs.cache
+G:\GitHub\SoftUni\01-ProgrammingBasics\02-ProgrammingBasics-Exams\ProgrammingBasicsExam-December2018\01_TrekkingEquipment\obj\Debug\netcoreapp2.1\01_TrekkingEquipment.AssemblyInfoInputs.cache
+G:\GitHub\SoftUni\01-ProgrammingBasics\02-ProgrammingBasics-Exams\ProgrammingBasicsExam-December2018\01_TrekkingEquipment\obj\Debug\netcoreapp2.1\01_TrekkingEquipment.AssemblyInfo.cs
+G:\GitHub\SoftUni\01-ProgrammingBasics\02-ProgrammingBasics-Exams\ProgrammingBasicsExam-December2018\01_TrekkingEquipment\obj\Debug\netcoreapp2.1\01_TrekkingEquipment.dll
+G:\GitHub\SoftUni\01-ProgrammingBasics\02-ProgrammingBasics-Exams\ProgrammingBasicsExam-December2018\01_TrekkingEquipment\obj\Debug\netcoreapp2.1\01_TrekkingEquipment.pdb
