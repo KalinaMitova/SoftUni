@@ -12,4 +12,6 @@ module.exports = config => {
     db.on('error', reason => {
         console.log(reason);
     });
+
+    require('../models/cubeSchema');
 };
