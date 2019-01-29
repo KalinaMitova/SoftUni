@@ -91,7 +91,7 @@ p.name {
 }
 
 
-button {
+.button {
     border: none;
     padding: 8px;
     text-align: center;
@@ -105,13 +105,13 @@ button {
     background: #607588;
 }
 
-button:hover {
+.button:hover {
     background-color: #0B2133;
     color: white;
     cursor: pointer;
 }
 
-button a {
+.button {
     text-decoration: none;
     color: white;
     text-transform: uppercase;
@@ -213,13 +213,31 @@ span.error {
     text-decoration: none;
     border-radius: 20px;
     font-weight: normal;
-    position: relative;
-    float: right;
+    position: absolute;
+    right: 40px;
+    top: 110px;
     margin-top: 20px;
     overflow: hidden;
     display: block;
 }
 
+span.success {
+    animation: fadeOut 1s forwards;
+    animation-delay: 2s;
+    background: #66AA44;
+    color: white;
+    padding: 10px;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 20px;
+    font-weight: normal;
+    position: absolute;
+    right: 40px;
+    top: 110px;
+    margin-top: 20px;
+    overflow: hidden;
+    display: block;
+}
 
 footer {
     background: #607588;

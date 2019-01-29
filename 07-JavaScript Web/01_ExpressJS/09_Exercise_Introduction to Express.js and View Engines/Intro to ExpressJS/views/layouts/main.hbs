@@ -18,10 +18,13 @@
                 <li><a href="/about">About</a></li>
             </ul>
         </header>
+        {{#if notification}}
+        <div style="text-align: center">
+            <span class="{{notification.type}}">{{notification.message}}</span>
+        </div>
+        {{/if}}
         <main>
-
             {{{body}}}
-
         </main>
     </div>
     <footer>@Cubicle: Exercise for Express.js and Handlebars</footer>

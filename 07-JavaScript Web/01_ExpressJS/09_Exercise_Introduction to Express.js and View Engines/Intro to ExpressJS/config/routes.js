@@ -1,26 +1,22 @@
-module.exports = app => {
+const homeHandler = require('../controllers/homeHandler');
+const cubeHandler = require('../controllers/cubeHandler');
 
+module.exports = app => {
     // Home page
-    app.get('/', (req, res) => {
-        res.render('../views/index');
-    });
+    app.get('/', homeHandler.homeGet);
 
     // About page
-    app.get('/about', (req, res) => {
-        res.render('../views/about');
-    });
+    app.get('/about', homeHandler.aboutGet);
 
     // Create page
-    app.get('/create', (req, res) => {
-        res.render('../views/create');
-    });
-
-    app.post('/create', (req, res) => {
-        // TODO: Implement functionality.
-    });
+    app.get('/create', cubeHandler.createGet);
+    app.post('/create', cubeHandler.createPost);
 
     // Details page
-    app.get('/details/:id', (req, res) => {
-        // TODO: Implement functionality.
+    app.get('/details/:id', cubeHandler.detailsGet);
+
+    // Redirect to home 
+    app.get('*', function (req, res) {
+        res.redirect('/');
     });
 };
