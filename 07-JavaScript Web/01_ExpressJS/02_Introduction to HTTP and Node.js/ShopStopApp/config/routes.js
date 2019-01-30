@@ -1,4 +1,4 @@
-const handlers = require('../handlers');
+const controlers = require('../controllers');
 const multer = require('multer');
 
 let upload = multer({
@@ -6,20 +6,20 @@ let upload = multer({
 });
 
 module.exports = (app) => {
-    app.get('/', handlers.home.index);
+    app.get('/', controlers.home.index);
 
-    app.get('/product/add', handlers.product.addGet);
-    app.post('/product/add', upload.single('image'), handlers.product.addPost);
+    app.get('/product/add', controlers.product.addGet);
+    app.post('/product/add', upload.single('image'), controlers.product.addPost);
 
-    app.get('/product/edit/:id', handlers.product.editGet);
-    app.post('/product/edit/:id', upload.single('image'), handlers.product.editPost);
+    app.get('/product/edit/:id', controlers.product.editGet);
+    app.post('/product/edit/:id', upload.single('image'), controlers.product.editPost);
 
-    app.get('/product/delete/:id', handlers.product.deleteGet);
-    app.post('/product/delete/:id', handlers.product.deletePost);
+    app.get('/product/delete/:id', controlers.product.deleteGet);
+    app.post('/product/delete/:id', controlers.product.deletePost);
 
-    app.get('/product/buy/:id', handlers.product.buyGet);
+    app.get('/product/buy/:id', controlers.product.buyGet);
 
-    app.get('/category/add', handlers.category.addGet);
-    app.post('/category/add', handlers.category.addPost);
-    app.get('/category/:category/products', handlers.category.productsByCategory);
+    app.get('/category/add', controlers.category.addGet);
+    app.post('/category/add', controlers.category.addPost);
+    app.get('/category/:category/products', controlers.category.productsByCategory);
 };

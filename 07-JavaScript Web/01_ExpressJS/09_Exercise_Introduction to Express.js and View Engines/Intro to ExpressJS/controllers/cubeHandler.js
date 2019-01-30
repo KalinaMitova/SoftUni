@@ -25,7 +25,7 @@ const createPost = function (req, res) {
                     });
                 })
                 .catch((err) => {
-                    notify.show(res, 'create', err.message, cube);
+                    notify.show(res, 'create', 'error', err.message, cube);
                 });
         })
         .catch((err) => {

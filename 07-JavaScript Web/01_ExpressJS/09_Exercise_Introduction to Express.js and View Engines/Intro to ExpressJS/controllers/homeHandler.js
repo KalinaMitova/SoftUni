@@ -6,7 +6,7 @@ const homeGet = function (req, res) {
     let condition = {};
 
     const params = req.query;
-    debugger;
+    
     if (params.search) {
         let regexp = new RegExp(params.search, 'i');
         condition.name = regexp;
@@ -31,7 +31,7 @@ const homeGet = function (req, res) {
             });
         })
         .catch((err) => {
-            notify.show(res, 'index', err.message);
+            notify.show(res, 'index', 'error', err.message);
         });
 };
 

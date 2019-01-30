@@ -23,6 +23,7 @@ const connect = (config) => {
 
     require('../models/Product');
     require('../models/Category');
+    require('../models/User').seedAdminUser();
 };
 
 module.exports = connect;
