@@ -4,7 +4,7 @@ module.exports.index = (req, res) => {
 
     let queryData = req.query;
 
-    Product.find({})
+    Product.find({buyer: null})
         .populate('category')
         .then((products) => {
             let data = {

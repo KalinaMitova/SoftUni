@@ -10,6 +10,7 @@ let configuration = config[environment];
 database(configuration);
 require('./config/express')(app, configuration);
 require('./config/routes')(app);
+require('./config/passport')();
 
 app.listen(port, () => {
     console.log('Server is listening on port ' + port);

@@ -1,9 +1,11 @@
-const homeHandler = require('./home');
-const productHandler = require('./product');
-const categoryHandler = require('./category');
+const homeController = require('./home');
+const productController = require('./product');
+const categoryController = require('./category');
+const userController = require('./user');
 
 module.exports = {
-    home: homeHandler,
-    product: productHandler,
-    category: categoryHandler,
+    home: homeController,
+    product: productController,
+    category: categoryController,
+    user: userController,
 };
