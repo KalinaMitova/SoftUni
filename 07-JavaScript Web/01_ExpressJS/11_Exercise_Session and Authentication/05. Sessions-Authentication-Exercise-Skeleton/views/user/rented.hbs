@@ -1,3 +1,7 @@
+{{#unless rents}}
+<h2>There are no rented cars.</h2>
+{{/unless}}
+
 <table>
     <thead>
         <tr>
@@ -7,11 +11,11 @@
         </tr>
     </thead>
     <tbody>
-        {{#each cars}}
+        {{#each rents}}
         <tr>
             <td>{{car.model}}</td>
             <td>{{car.pricePerDay}} &euro;</td>
-            <td>{{car.expiresOn}}</td>
+            <td>In {{days}} days.</td>
         </tr>
         {{/each}}
     </tbody>

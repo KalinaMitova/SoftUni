@@ -1,13 +1,20 @@
-<form id="search-form" action="/search">
+<form id="search-form" action="/car/all" method="GET">
     <!--Chosse criteria for searching-->
+    <br>
+    <label for="criteria">Search by model:</label>
     <input type="text" name="model">
     <input class="submit-btn" type="submit" value="Search" />
 </form>
+
 <div id="container">
+    {{#unless cars}}
+    <h2>There are no available cars.</h2>
+    {{/unless}}
+
     {{#each cars}}
     <div class="car">
         <h2>{{model}}</h2>
-        <img src="{{image}}" alt="car">
+        <img src="{{imageUrl}}" alt="car">
         <h2 class="price">Price per day: {{pricePerDay}} &euro;</h2>
 
         {{#if ../user}}
