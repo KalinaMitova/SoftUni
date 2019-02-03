@@ -38,7 +38,14 @@ module.exports = {
 
             let model = req.query.model;
             if (model) {
-                condition.model = new RegExp(model.toLowerCase(), 'i');
+                const searchedModel = `^${model
+                    .toLowerCase()
+                    .split(' ')
+                    .filter(e => e)
+                    .map(val => `(?=.*${val})`)
+                    .join('')}.*$`;
+                debugger;
+                condition.model = new RegExp(searchedModel, 'i');
             }
 
             let cars = await Car.find(condition);
@@ -152,7 +159,7 @@ module.exports = {
                 return;
             }
 
-            const car = await Car.findByIdAndUpdate(carId, carModel);
+            await Car.findByIdAndUpdate(carId, carModel);
 
             res.render(homePage, {
                 success: "Car is updated successfully"

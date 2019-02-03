@@ -1,0 +1,28 @@
+<div class="container body-content">
+    <div class="row">
+        {{#unless articles}}
+        <h2 style="text-align:center;">There are no articles.</h2>
+        {{/unless}}
+        {{#each articles}}
+        <div class="col-md-6">
+            <article>
+                <header>
+                    <h2>{{title}}</h2>
+                </header>
+
+                <p>{{content}}</p>
+
+                <small class="author">
+                    {{author.fullName}}
+                </small>
+
+                <footer>
+                    <div class="pull-right">
+                        <a class="btn btn-default btn-xs" href="/article/details/{{id}}">Read more &raquo;</a>
+                    </div>
+                </footer>
+            </article>
+        </div>
+        {{/each}}
+    </div>
+</div>
