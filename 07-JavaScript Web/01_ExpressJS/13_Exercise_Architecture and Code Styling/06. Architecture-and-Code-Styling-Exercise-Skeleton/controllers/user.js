@@ -5,7 +5,6 @@ module.exports = {
     registerGet: (req, res) => {
         res.render('user/register');
     },
-
     registerPost: (req, res) => {
         let registerArgs = req.body;
 
@@ -47,11 +46,9 @@ module.exports = {
             }
         })
     },
-
     loginGet: (req, res) => {
         res.render('user/login');
     },
-
     loginPost: (req, res) => {
         let loginArgs = req.body;
         User.findOne({
@@ -81,9 +78,21 @@ module.exports = {
             })
         })
     },
-
     logout: (req, res) => {
         req.logOut();
         res.redirect('/');
+    },
+    details: (req, res) => {
+
+        User.findById(req.user.id)
+            .select("fullName email")
+            .populate("articles", "title content articles")
+            .then((userModel) => {
+
+                res.render('user/details', userModel)
+            })
+            .catch(err => {
+                res.redirect('/');
+            });
     }
 };

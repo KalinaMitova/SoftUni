@@ -17,6 +17,8 @@ module.exports = (app) => {
 
     app.get('/user/logout', restrictedPages.isAuthed, userController.logout);
 
+    app.get('/user/details', restrictedPages.isAuthed, userController.details);
+
     // Article routes
     app.get('/article/create', restrictedPages.isAuthed, articleController.createGet);
     app.post('/article/create', restrictedPages.isAuthed, articleController.createPost);
