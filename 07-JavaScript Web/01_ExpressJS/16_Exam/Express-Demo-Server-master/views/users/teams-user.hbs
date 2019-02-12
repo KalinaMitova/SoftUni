@@ -1,0 +1,34 @@
+<h1>Teams</h1>
+<form class="search" action="/user/team/all" method="GET">
+  <label for="searchKeyword">Seach: </label>
+  <input type="text" name="searchKeyword" value="{{searchKeyword}}">
+  <input type="submit" value="Search">
+</form>
+<div class="teams">
+  {{#each teams}}
+  <div class="team">
+    <h2>{{name}}</h2>
+    <div class="team-info">
+      <h3>Members</h3>
+      {{#each members}}
+      <p>{{firstName}} {{lastName}}</p>
+      {{/each}}
+      {{#unless members}}
+      <p>Team has no members</p>
+      {{/unless}}
+    </div>
+    <div class="team-info">
+      <h3>Projects</h3>
+      {{#each projects}}
+      <p>{{name}}</p>
+      {{/each}}
+      {{#unless projects}}
+      <p>Team has no projects</p>
+      {{/unless}}
+    </div>
+  </div>
+  {{/each}}
+  {{#unless teams}}
+  <h1>There are no teams!</h1>
+  {{/unless}}
+</div>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Projects Manager</title>
+    <link href="/css/site.css" type="text/css" rel="stylesheet">
+</head>
+
+<body>
+    <header>
+        <ul>
+            <li><a href="/">Home</a></li>
+
+            {{#if isAuth}}
+            {{#if isAdmin}}
+            <li><a href="/admin/project/distribute">Projects</a></li>
+            <li><a href="/admin/team/distribute">Teams</a></li>
+            <li><a href="/admin/team/create">Create Team</a></li>
+            <li><a href="/admin/project/create">Create Project</a></li>
+            {{else}}
+            <li><a href="/user/project/all">Projects</a></li>
+            <li><a href="/user/team/all">Teams</a></li>
+            {{/if}}
+            {{/if}}
+
+            <div class="right">
+                {{#if isAuth}}
+                <li>Welcome, {{user.username}}!</li>
+                <li><a href="/user/profile">Profile</a></li>
+                <li>
+                    <form id="logout-form" action="/user/logout" method="post"></form>
+                    <a href="javascript:document.getElementById('logout-form').submit()">Logout</a>
+                </li>
+                {{else}}
+                <li><a href="/user/login">Login</a></li>
+                <li><a href="/user/register">Register</a></li>
+                {{/if}}
+            </div>
+        </ul>
+    </header>
+    <main>
+        {{#if notification}}
+        <div class="notify {{notification.type}}">
+            <span>{{notification.message}}</span>
+        </div>
+        {{/if}}
+
+        {{{body}}}
+    </main>
+    <footer>
+        Express Exam @SoftUni
+    </footer>
+</body>
+
+</html>

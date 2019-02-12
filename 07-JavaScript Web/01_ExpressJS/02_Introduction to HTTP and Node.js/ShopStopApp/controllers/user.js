@@ -4,43 +4,62 @@ const encryption = require('../utilities/encryption');
 
 const passwordsDoNotMatchMessage = 'Passwords do not match';
 const authonticationErrorMessage = 'Authentication not working';
+const userAlreadyExist = 'User "{0}" already exist!';
 
 module.exports.registerGet = (req, res) => {
     res.render('user/register');
 };
 
 module.exports.registerPost = (req, res) => {
-    let user = req.body;
+    let userModel = req.body;
 
-    if (user.password && user.password !== user.confirmedPassword) {
+    if (userModel.password && userModel.confirmedPassword && userModel.password !== userModel.confirmedPassword) {
 
         res.render('user/register', {
-            user,
+            userModel,
             error: passwordsDoNotMatchMessage
         });
         return;
     }
 
-    let salt = encryption.generateSalt();
-    user.salt = salt;
-
-    if (user.password) {
-        let hashedPassword = encryption.generateHashedPassword(salt, user.password);
-        user.password = hashedPassword;
-    }
-
-    User.create(user)
+    User.find({
+            username: userModel.username
+        })
         .then((user) => {
-            req.logIn(user, (error, user) => {
-                if (error) {
-                    res.render('user/register', {
-                        error: authonticationErrorMessage
-                    });
-                    return;
-                }
+            if (user) {
+                res.render('user/register', {
+                    userModel,
+                    error: userAlreadyExist.replace('{0}', userModel.username)
+                });
+                return;
+            }
 
-                res.redirect('/');
-            });
+            let salt = encryption.generateSalt();
+            userModel.salt = salt;
+            userModel.password = encryption.generateHashedPassword(salt, userModel.password);
+
+            User.create(userModel)
+                .then((createdUser) => {
+                    req.logIn(createdUser, (error, loggedInUser) => {
+                        if (error) {
+                            res.render('user/register', {
+                                error: authonticationErrorMessage
+                            });
+                            return;
+                        }
+
+                        res.redirect('/');
+                    });
+                })
+                .catch((error) => {
+                    let errorMessages = Object.keys(error.errors)
+                        .map(key => error.errors[key].message)
+                        .join(' ');
+
+                    res.render('user/register', {
+                        error: errorMessages
+                    });
+                });
         })
         .catch((error) => {
             let errorMessages = Object.keys(error.errors)
