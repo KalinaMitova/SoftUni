@@ -24,7 +24,7 @@ class RegisterForm extends React.Component {
             password: this.state.password,
         };
 
-        this.props.registerUser(this.state);
+        this.props.registerUser(user);
     }
 
     onInputChangeHandler(event) {

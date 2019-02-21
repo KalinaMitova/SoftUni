@@ -8,7 +8,8 @@ function validateUser(req, res, next) {
   if (!errors.isEmpty()) {
     res.status(422).json({
       message: 'Validation failed, entered data is incorrect',
-      errors: errors.array()
+      errors: errors.array(),
+      body: req.body,
     });
     return false;
   }
@@ -47,13 +48,13 @@ module.exports = {
     User.findOne({ username })
       .then((user) => {
         if (!user) {
-          const error = new Error('A user with this username could not be found');
+          const error = new Error('Invalid credentials.');
           error.statusCode = 401;
           throw error;
         }
 
         if(!user.authenticate(password)) {
-          const error = new Error('A user with this email could not be found');
+          const error = new Error('Invalid credentials.');
           error.statusCode = 401;
           throw error;
         }
