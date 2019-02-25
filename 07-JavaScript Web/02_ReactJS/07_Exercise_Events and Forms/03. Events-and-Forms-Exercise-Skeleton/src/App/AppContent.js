@@ -15,7 +15,6 @@ class AppContent extends Component {
                     registerUser={this.props.registerUser}
                     loginUser={this.props.loginUser}
                     loginForm={this.props.loginForm}
-                    regForm={this.props.regForm}
                     user={this.props.user}
                     createGame={this.props.createGame}
                 />

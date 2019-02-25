@@ -1,9 +1,10 @@
 import React, {Component} from 'react';
 import './App.css';
-// import AppHeader from "./App/AppHeader";
+import 'react-toastify/dist/ReactToastify.css';
 import AppContent from "./App/AppContent";
-import AppFooter from "./App/AppFooter";
 import AppNav from './App/AppNav';
+import { ToastContainer } from 'react-toastify';
+import { toast } from 'react-toastify';
 
 class App extends Component {
 
@@ -24,7 +25,9 @@ class App extends Component {
     registerUser(user) {
         // TODO: register a user and login
         if(this.state.user.isLoggedIn) {
-            console.log('You are already logged in. Please logout first!');
+            toast.info('You are already logged in. Please logout first!', {
+                position: toast.POSITION.TOP_RIGHT
+            });
             return;
         }
 
@@ -36,12 +39,14 @@ class App extends Component {
             },
         })
             .then(response => response.json())
-            .then((data) => {                
+            .then((data) => {
                 if(data.errors) {
-                    console.log(data.errors.map(err => err.msg));
+                    data.errors.forEach(err => {
+                        toast.error(err.msg);
+                    });
                     return;
                 }
-
+                
                 if(user.username === data.username) {
                     let userToLoin = {
                         username: user.username,
@@ -56,7 +61,9 @@ class App extends Component {
 
     loginUser(user) {
         if(this.state.user.isLoggedIn) {
-            console.log('You are already logged in. Please logout first!');
+            toast.info('You are already logged in. Please logout first!', {
+                position: toast.POSITION.TOP_RIGHT
+            });
             return;
         }
 
@@ -69,37 +76,46 @@ class App extends Component {
             },
         })
             .then(response => response.json())
-            .then((data) => {                
-                if(data.errors) {
-                    console.log(data.errors.map(err => err.msg));
+            .then((data) => {   
+                console.log(data);             
+                if(data.hasOwnProperty('message') && !data.hasOwnProperty('token')) {
+                    toast.error(data.message, {
+                        position: toast.POSITION.TOP_RIGHT
+                    });
                     return;
                 }
                 
-                if(user.username === data.username && data.token) {                    
+                if(user.username === data.username && data.token) {        
+                    sessionStorage.setItem('userId', data.userId);
+                    sessionStorage.setItem('username', data.username);
+                    sessionStorage.setItem('token', data.token);
+
                     this.setState({
                         user: {
                             userId: data.userId,
                             username: data.username,
                             isLoggedIn: true,
                         },
-                    })
+                    });
 
-                    sessionStorage.setItem('userId', data.userId);
-                    sessionStorage.setItem('username', data.username);
-                    sessionStorage.setItem('token', data.token);
+                    toast.success(data.message, {
+                        position: toast.POSITION.TOP_RIGHT
+                    });
                 }
             })
             .catch(console.log);
     }
 
     logout(event) {
-       // TODO: prevent the default state
-       event.preventDefault();
+        // TODO: prevent the default state
+        event.preventDefault();
 
-       if(!this.state.user.isLoggedIn) {
-        console.log('You are not logged in. Please login first!');
-        return;
-    }
+        if(!this.state.user.isLoggedIn) {
+            toast.info('You are not logged in. Please login first!', {
+                position: toast.POSITION.TOP_RIGHT
+            });
+            return;
+        }
     
        // TODO: delete the data from the sessionStorage
        sessionStorage.removeItem('userId');
@@ -117,9 +133,6 @@ class App extends Component {
     }
 
     componentWillMount() {
-        // TODO: check if there is a logged in user using the sessionStorage 
-        // (if so, update the state, otherwise set the user to null)
-
         // TODO: fetch all the games
         this.fetchAllGames()
             .catch(console.log);
@@ -128,7 +141,9 @@ class App extends Component {
     createGame(game) {
         
         if(!this.state.user.isLoggedIn) {
-            console.log('Please login first!');
+            toast.info('Please login first!', {
+                position: toast.POSITION.TOP_RIGHT
+            });
             return;
         }
 
@@ -145,10 +160,15 @@ class App extends Component {
             .then(response => response.json())
             .then(data => {
                 if(data.errors) {
-                    console.log(data.errors.map(err => err.msg));
+                    data.errors.forEach(err => {
+                        toast.error(err.msg);
+                    });
                     return;
                 }
-                console.log(data);
+
+                toast.success("Game is created successfully.", {
+                    position: toast.POSITION.TOP_RIGHT
+                });
 
                 this.fetchAllGames();
             })
@@ -169,7 +189,8 @@ class App extends Component {
             .then(response => response.json())
             .then(data => {
                 this.setState({
-                    games: data.games
+                    games: data.games,
+                    hasFetched: true,
                 });
             });
     }
@@ -183,6 +204,7 @@ class App extends Component {
                     switchForm={this.switchForm.bind(this)}
                     loginForm={this.state.loginForm}
                 />
+                <ToastContainer />               
                 <AppContent
                     registerUser={this.registerUser.bind(this)}
                     loginUser={this.loginUser.bind(this)}
@@ -191,7 +213,6 @@ class App extends Component {
                     user={this.state.user}
                     loginForm={this.state.loginForm}
                 />
-                <AppFooter/>
             </main>
         )
     }

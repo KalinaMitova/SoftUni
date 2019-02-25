@@ -1,5 +1,6 @@
 import React from 'react';
 import './login.css';
+import { toast } from 'react-toastify';
 
 class LogInForm extends React.Component {
     constructor(props) {
@@ -25,11 +26,19 @@ class LogInForm extends React.Component {
         // TODO: prevent the default behavior of the event and use the loginUser function by passing it the data from the form
         event.preventDefault();
 
+        if(!this.state.username || !this.state.password) {
+            toast.error('All fields are required!', {
+                position: toast.POSITION.TOP_RIGHT
+            });
+            
+            return;
+        }
+
         const user = {
             username: this.state.username,
             password: this.state.password,
         };
-
+        
         this.props.loginUser(user);
     }
 

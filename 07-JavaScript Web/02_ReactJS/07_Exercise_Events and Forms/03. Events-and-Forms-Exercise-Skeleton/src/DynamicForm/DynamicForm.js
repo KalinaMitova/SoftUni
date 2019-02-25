@@ -2,7 +2,6 @@ import React from "react";
 import RegisterForm from "./RegisterForm";
 import LogInForm from "./LoginForm";
 import CreateForm from "../Games/CreateForm";
-import { create } from "domain";
 
 class DynamicForm extends React.Component {
     render() {
@@ -10,7 +9,6 @@ class DynamicForm extends React.Component {
             registerUser, 
             loginUser, 
             loginForm, 
-            regForm, 
             createGame } = this.props;
 
         return (

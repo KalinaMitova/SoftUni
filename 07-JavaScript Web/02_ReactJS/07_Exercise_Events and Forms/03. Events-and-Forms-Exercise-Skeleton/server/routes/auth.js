@@ -26,6 +26,14 @@ router.post('/signup',
       .not()
       .isEmpty()
       .withMessage('Please enter a valid username.')
+      .custom((value, { req }) => {
+        return User.findOne({ username: value }).then(userDoc => {
+          if (userDoc) {
+            return Promise.reject('Username address already exists!');
+          }
+          return Promise.resolve();
+        })
+      }),
   ]
 , authController.signUp);
 router.post('/signin', authController.signIn);

@@ -21,7 +21,7 @@ function FormRow(props) {
     return (
         <Fragment>
             {props.games.map(game => (
-                <Grid item xs={4}>
+                <Grid key={game._id} item xs={4}>
                     <Paper className={classes.paper}>
                         <div>{game.title}</div>
                         <img src={game.imageUrl} alt={game.title}/>
@@ -46,14 +46,14 @@ function NestedGrid(props) {
             result.push(array.slice(index, index + 3));
         return result;
     }, []);
-
+    
     return (
         <div className={classes.root}>
             <Typography variant="h2" color="inherit" className={classes.grow}>
                 GAMES
             </Typography>
-            {pairs.map((pair) => (
-                <Grid container spacing={8}>
+            {pairs.map((pair, idx) => (
+                <Grid key={idx} container spacing={8}>
                     <Grid container item xs={12} spacing={24}>
                         <FormRow classes={classes} games={pair}/>
                     </Grid>
