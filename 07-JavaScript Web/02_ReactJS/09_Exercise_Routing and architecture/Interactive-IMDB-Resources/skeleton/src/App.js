@@ -1,5 +1,5 @@
 import React, { Component, Fragment } from 'react';
-import { BrowserRouter as Router, Route, Switch, Redirect } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import Header from './Header/Header';
 import Home from './Home/Home';
 import Login from './Login/Login';
@@ -25,8 +25,7 @@ class App extends Component {
     this.logout = this.logout.bind(this);
   }
 
-  login(user) {
-    
+  login(user) {    
     fetch('http://localhost:9999/auth/signin', {
       method: 'POST',
       body: JSON.stringify(user),
@@ -46,6 +45,7 @@ class App extends Component {
         localStorage.setItem('username', data.username);
         localStorage.setItem('userId', data.userId);
         localStorage.setItem('token', data.token);
+        localStorage.setItem('isAdmin', data.isAdmin);
 
         this.setState({
           user: {
@@ -55,12 +55,9 @@ class App extends Component {
             token: data.token,
             isAdmin: data.isAdmin,
           },
-        });
-        
+        });      
         // TODO: Toastify data.message "User created!";
         console.log(data.message);
-
-        return;
       })
       .catch(console.log);
   }
@@ -71,6 +68,7 @@ class App extends Component {
     localStorage.removeItem('username');
     localStorage.removeItem('userId');
     localStorage.removeItem('token');
+    localStorage.removeItem('isAdmin');
 
     this.setState({
       user: {
@@ -81,6 +79,25 @@ class App extends Component {
         isAdmin: false,
       },
     });
+  }
+
+  componentDidMount() {
+    const username = localStorage.getItem('username');
+    const userId = localStorage.getItem('userId');
+    const token = localStorage.getItem('token');
+    const isAdmin = localStorage.getItem('isAdmin');
+
+    if(localStorage.getItem('token')) {
+      this.setState({
+        user: {
+          isLoggedIn: true,
+          username: username,
+          userId: userId,
+          token: token,
+          isAdmin: isAdmin,
+        },
+      });      
+    }
   }
 
   render() {

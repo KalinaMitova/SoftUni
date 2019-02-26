@@ -35,7 +35,7 @@ class Login extends Component {
 
   render() {
     if(this.props.user.isLoggedIn) {
-      return <Redirect push to="/" />;
+      return <Redirect to="/" />;
     }
 
     return (
