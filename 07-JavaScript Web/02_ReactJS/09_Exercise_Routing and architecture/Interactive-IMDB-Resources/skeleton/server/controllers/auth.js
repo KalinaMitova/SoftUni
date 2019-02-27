@@ -20,7 +20,7 @@ module.exports = {
   signUp: (req, res, next) => {
 
     if (validateUser(req, res)) {
-      const {  username, password,email } = req.body;
+      const {  username, password, email } = req.body;
       const salt = encryption.generateSalt();
       const hashedPassword = encryption.generateHashedPassword(salt, password);
       User.create({ 

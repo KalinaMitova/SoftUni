@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import { Redirect } from 'react-router-dom';
+import { toast } from 'react-toastify';
+
 import './Create.css';
 
 class Create extends Component {
@@ -51,7 +53,7 @@ class Create extends Component {
       .then((response) => response.json())
       .then((data) => {
         // TODO: Toastify success message.
-        console.log(data.message);
+        toast.success(data.message);
 
         this.setState({
           redirect: true,
@@ -66,19 +68,19 @@ class Create extends Component {
     let isValid = true;
 
     if(!movie.title || !movie.title.trim()) {
-      console.log("Title is required!");
+      toast.error("Title is required!");
       isValid = false;
     }
     if(!movie.storyLine || !movie.storyLine.trim()) {
-      console.log("Story line is required!");
+      toast.error("Story line is required!");
       isValid = false;
     }
     if(!movie.trailerUrl || !movie.trailerUrl.trim()) {
-      console.log("Trailer Url is required!");
+      toast.error("Trailer Url is required!");
       isValid = false;
     }
     if(!movie.posterUrl || !movie.posterUrl.trim()) {
-      console.log("Poster Url is required!");
+      toast.error("Poster Url is required!");
       isValid = false;
     }
 

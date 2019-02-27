@@ -19,7 +19,14 @@ router.post('/signup',
     body('password')
       .trim()
       .isLength({ min: 5 })
-      .withMessage('Please enter a valid password.'),
+      .withMessage('Please enter a valid password.')
+      .custom((value, { req }) => {
+        return User.findOne({ username: value }).then(userDoc => {
+          if (userDoc) {
+            return Promise.reject('Username address already exists!');
+          }
+        })
+      }),
     body('username')
       .trim()
       .not()

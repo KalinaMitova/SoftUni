@@ -1,11 +1,16 @@
 import React, { Component, Fragment } from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import { ToastContainer, toast } from 'react-toastify';
+import NotFound from './NotFound';
+
 import Header from './Header/Header';
 import Home from './Home/Home';
 import Login from './Login/Login';
 import Register from './Register/Register';
 import Create from './Create/Create';
+
 import './App.css';
+import 'react-toastify/dist/ReactToastify.min.css';
 
 class App extends Component {
   constructor(props) {
@@ -37,8 +42,7 @@ class App extends Component {
       .then((data) => {
         
         if(!data.token || !data.username || !data.userId) {
-          // TODO: Toastify errors;
-          console.log(data.message);
+          toast.error(data.message);
           return;
         }
         
@@ -56,10 +60,10 @@ class App extends Component {
             isAdmin: data.isAdmin,
           },
         });      
-        // TODO: Toastify data.message "User created!";
-        console.log(data.message);
+        
+        toast.success(data.message);
       })
-      .catch(console.log);
+      .catch(toast.error);
   }
 
   logout(event) {
@@ -79,6 +83,8 @@ class App extends Component {
         isAdmin: false,
       },
     });
+
+    toast.success("Logout successful!");
   }
 
   componentDidMount() {
@@ -106,11 +112,13 @@ class App extends Component {
           <Router>
             <Fragment>
               <Header logout={this.logout} user={this.state.user} />
+              <ToastContainer closeButton={false} />
               <Switch>
                 <Route exact path="/" render={() => <Home user={this.state.user}/>} />
                 <Route exact path="/login" render={() => <Login login={this.login} user={this.state.user}/>} />
                 <Route exact path="/register" render={() => <Register login={this.login} user={this.state.user}/>} />
                 <Route exact path="/movie/create" render={() => <Create user={this.state.user}/>} />
+                <Route component={NotFound} />
               </Switch>
             </Fragment>
           </Router>

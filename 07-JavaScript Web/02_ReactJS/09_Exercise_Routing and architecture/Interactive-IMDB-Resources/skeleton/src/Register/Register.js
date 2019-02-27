@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import { Redirect } from 'react-router-dom';
+import { toast } from 'react-toastify';
+
 import './Register.css';
 
 class Register extends Component {
@@ -17,7 +19,7 @@ class Register extends Component {
   }
 
   onChangeHandler(event) {
-    const name = event.target.name;    
+    const name = event.target.name;
 
     if(this.state.hasOwnProperty(name)) {
       const value = event.target.value;
@@ -40,8 +42,6 @@ class Register extends Component {
     })
       .then((response) => response.json())
       .then((data) => {
-        // TODO: Toastify data.message "User created!";
-        console.log(data.message);
         
         if(this.state.username === data.username) {
           const userToLogin = {
@@ -50,9 +50,13 @@ class Register extends Component {
           };
 
           this.props.login(userToLogin);
+          
+          toast.success(data.message);
         } else {
-          // TODO: Toastify error message;
-          console.log(data.message);
+          toast.error(data.message);
+          data.errors.forEach((err) => {
+            toast.error(err.msg);
+          });
         }
       })
       .catch(console.log);

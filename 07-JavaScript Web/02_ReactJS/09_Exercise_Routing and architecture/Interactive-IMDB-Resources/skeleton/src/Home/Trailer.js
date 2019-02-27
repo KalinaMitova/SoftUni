@@ -22,8 +22,7 @@ function Trailer(props) {
                 <div style={styles.innerTrailer}>
                     {
                         containsEmbed ?
-                        <iframe 
-                            frameborder="0"                             
+                        <iframe                            
                             allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
                             title="YouTube video player" 
                             width="100%" 
